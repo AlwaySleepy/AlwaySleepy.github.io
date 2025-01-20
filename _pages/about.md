@@ -7,7 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-I am a fourth-year student at the school of EECS of Peking University majoring in Computer Science. Currently, I am advised by [Prof. Hao Dong](https://zsdonghao.github.io/) at Hyperplane Lab. My research is driven by the goal of enabling robots to perform dextrous tasks with adaptability, generalizability and safety, focusing on vision based methods, like representation learning, as a toolbox for solving such problems.
+I am a fourth-year student at the school of EECS of Peking University majoring in Computer Science. 
+Currently, I am advised by [Prof. Hao Dong](https://zsdonghao.github.io/) at Hyperplane Lab. My research interests primarily focus on computer vision and robotics. 
 
 
 A data-driven personal website
