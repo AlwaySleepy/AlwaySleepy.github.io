@@ -14,7 +14,7 @@ Currently, I am advised by [Prof. Hao Dong](https://zsdonghao.github.io/) at Hyp
 
 Looking for Summer Research Internship
 ======
-I am looking for 2025 summer internship opportunities.
+Currently I am looking for 2025 summer internship opportunities!\
 Here is my [CV](../assets/cv.pdf).
 
 
