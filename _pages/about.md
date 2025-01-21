@@ -10,6 +10,7 @@ redirect_from:
 I am a third-year student at the school of EECS of Peking University majoring in Computer Science. 
 Currently, I am advised by [Prof. Hao Dong](https://zsdonghao.github.io/) at Hyperplane Lab. My research interests primarily focus on computer vision and robotics. 
 
+Here is my [CV](../assets/cv.pdf)
 
 A data-driven personal website
 ======
