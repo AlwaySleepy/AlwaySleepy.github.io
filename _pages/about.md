@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a fourth-year student at the school of EECS of Peking University majoring in Computer Science. 
+I am a third-year student at the school of EECS of Peking University majoring in Computer Science. 
 Currently, I am advised by [Prof. Hao Dong](https://zsdonghao.github.io/) at Hyperplane Lab. My research interests primarily focus on computer vision and robotics. 
 
 
