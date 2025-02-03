@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<!-- head -->
+<head>
+  <script>
+    (function () {
+        var a_idx = 0;
+        window.onclick = function (event) {
+            var a = new Array( "🤖", "🤯","🏀","🎻","🎨","🎤","🏓");
+
+            var heart = document.createElement("b");
+            heart.onselectstart = new Function('event.returnValue=false');
+
+            document.body.appendChild(heart).innerHTML = a[a_idx];
+            a_idx = (a_idx + 1) % a.length;
+            heart.style.cssText = "position: fixed;left:-100%;";
+
+            var f = 16, 
+                x = event.clientX - f / 2, 
+                y = event.clientY - f,
+                c = randomColor(), 
+                a = 1,
+                s = 1.2; 
+
+            var timer = setInterval(function () { 
+                if (a <= 0) {
+                    document.body.removeChild(heart);
+                    clearInterval(timer);
+                } else {
+                    heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                        c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                        s + ");";
+
+                    y--;
+                    a -= 0.016;
+                    s += 0.002;
+                }
+            }, 15)
+
+        }
+        function randomColor() {
+
+            return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+            .random() * 255)) + ")";
+
+        }
+    }());
+
+  </script>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Ziyu Zhu      诸子瑜</title>
+
+
+
+  <meta name="author" content="Ziyu Zhu">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="icon" type="image/png" href="images/myprofile.jpg">
+</head>
+
+<!-- bib hide -->
+<script type="text/javascript">
+  function hideshow(which){
+  if (!document.getElementById)
+  return
+  if (which.style.display=="block")
+  which.style.display="none"
+  else
+  which.style.display="block"
+  }
+
+
+  </script>
+
+
+
+
+
+<!-- body -->
+<body>
+
+
+  <!-- self-intro --> 
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2%;width:55%;vertical-align:middle">
+              <p style="text-align:center">
+                <name> Ziyu Zhu  诸子瑜</name>
+                <!-- <span style="font-size:20px ">将鼠标指向这里:</span>
+                <a style="color:#3300FF; font-size:20px; font-style:italic " onMouseMove="move()" onMouseOut="return out();">将飞出一个标记</a> -->
+
+              </p>
+              <p style="text-align: justify">
+            
+                </intro>
+                <intro>I am a third-year student at the <a href="https://eecs.pku.edu.cn/" target="_blank">
+                  <d>School of Electronic Engineering and Computer Science(EECS)</d></a> of
+                   <a href="https://english.pku.edu.cn/" target="_blank"><d>Peking University</d></a>.
+                  I am currently advised by Prof. <a href="https://zsdonghao.github.io/" target="_blank">
+                    <d>Hao Dong</d></a> at <a href="https://zsdonghao.github.io/#lab" target="_blank"><d>Hyperplane Lab</d></a>.
+                    My research interest lies in robotics and computer vision, with the goal of
+                    enabling robots to perform dextrous tasks with adaptability, generalizability
+                    and safety.
+                  </intro>
+              <p style="text-align:center">
+                <a href="mailto:2200012964@stu.pku.edu.cn" target="_blank">Email</a> &nbsp/&nbsp
+
+                <a href="https://github.com/AlwaySleepy/" target="_blank">Github</a>&nbsp/&nbsp
+                <a href="pdf/profile.pdf" target="_blank">CV</a>
+              </p>
+            </td>
+            <td style="padding:0%; width:26%; max-width:26%;"> 
+              <br>
+           
+              <img style="padding:1%; width:100%; max-width:80%;  display: block; margin-left: auto; margin-right: auto; " alt="profile photo" src="images/portrait.jpg">
+              <div style="text-align:center">
+                <style>
+                  .threesolid{
+                    font-size: 20px;
+                    font-family: cursive;
+                    color:#454545;
+                    text-shadow:0px 1px 0px #c0c0c0,
+                      0px 2px 0px #b0b0b0,
+                      0px 3px 0px #a0a0a0,
+                      0px 4px 0px #909090,
+                      0px 5px 10px rgba(0, 0, 0, .9);
+                  } 
+                  </style>
+                <!-- <a href="https://www.quoteslyfe.com/images/collection2/quotations331/Don-t-be-afraid-to-start-over-331234.jpg" target="_blank"><div class="threesolid">quote of the day</div></a> -->
+              </div>
+            
+              <!-- <a href="https://hits.seeyoufarm.com" target="_blank">
+                <img 
+                  src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fselina2023.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"
+                  style="display: block; margin-left: auto; margin-right: auto; width: 55%;"/>
+              </a> -->
+            </td>
+            <!-- <td style="padding:5%;width:37%;max-width:37%"> 
+              <img style="width:100%;max-width:100%" alt="profile photo" src="images/face3.jpg" class="hoverZoomLink">
+              <a href="https://hits.seeyoufarm.com" target="_blank"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgeng-haoran.github.io&count_bg=%23FF8400&title_bg=%23545353&icon=tableau.svg&icon_color=%23F3F209&title=hits&edge_flat=false"/></a>
+            </td> -->
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    </tr>
+  </tbody></table>
+
+
+
+
+  <!-- Experience -->
+
+  <table width="100%" align="center" border="0" cellpadding="10"><tbody>
+      <br>
+          <heading>Experience</heading>
+      <br>
+      
+      <!-- <tr>
+        <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/galbot.png", width="108"></td>
+        <td width="90%" valign="center">
+          <strong><a href="https://www.galbot.com/" target="_blank"><papertitle>GALBOT</papertitle></a></strong>
+          <br> <em>2023.10 - Present</em>
+          <br> <strong>Research Intern</strong>
+          <br> Research Advisor: <a href="https://hughw19.github.io/" target="_blank">He Wang</a> 
+        </td>
+      </tr>  -->
+      <!-- <tr>
+        <td style="padding-left:27px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/ShanghaiAI.jpg", width="90"></td>
+        <td width="90%" valign="center">
+          <strong><a href="https://www.shlab.org.cn/" target="_blank"><papertitle>Shanghai Artificial Intelligence Laboratory</papertitle></a></strong>
+          <br> <em>2023.6 - 2023.9</em>
+          <br> <strong>Summer Research Intern</strong>
+          <br> Research Team: <a href="https://github.com/open-mmlab" target="_blank">OpenMMLab</a> 
+        </td>
+      </tr> 
+      <tr>
+        <br>
+        <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/Zhilogo.jpg", width="108"></td>
+        <td width="90%" valign="center">
+          <strong><a href="https://zhi-class.ai" target="_blank">Zhi Class</a></strong>
+          <br> <em>2022.09 - Present</em>
+          <br> <strong> Class Leader </strong>
+          <br> GPA Ranking : 1<sup>st</sup>
+          <br> Academic Advisor: Prof. <a href="https://cfcs.pku.edu.cn/baoquan/" target="_blank">Baoquan Chen</a>
+        </td>
+    </tr> -->
+      <tr>
+          <br>
+          <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/PKU.png", width="108"></td>
+          <td width="90%" valign="center">
+            <strong><a href="https://english.pku.edu.cn/" target="_blank"><papertitle>Peking University (PKU)</papertitle></a></strong>
+            <br> <em>2022.09 - Present</em>
+            <br> <strong> Undergraduate Student</strong>
+            <br> Major:  Intelligence Science and Technology (Artificial Intelligence)
+          </td>
+      </tr>
+      
+        
+  </tbody></table>
+
+  
+  
+
+  <!-- Aknowledgements -->
+  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr>
+      <!-- <br> -->
+      <!-- <br> -->
+      <hr>
+        <p style="text-align:center">
+          This homepage is designed based on <a href="https://jonbarron.info/">Jon Barron</a>'s website. 
+
+    
+        </p>
+      </td>
+      </tr>
+  </tbody></table>
+ 
+</body>
+</html>
