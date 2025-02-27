@@ -159,6 +159,28 @@
     <heading>Research</heading>
     <br>
 
+ <!-- garment pile -->
+    <tr onmouseout="garmentpile_stop()" onmouseover="garmentpile_start()">
+    <td style="padding:20px;width:25%;vertical-align:middle">
+      <div class="one">
+	<div class="two" id='garmentpile_image'>
+	  <img src='images/garmentpile.jpg' width="190" align="margin-right"></div>
+	<img src='images/garmentpile.jpg' width="190">
+      </div>
+      <script type="text/javascript">
+	function garmentpile_start() {
+	  document.getElementById('garmentpile_image').style.opacity = "1";
+	}
+
+	function garmentpile_stop() {
+	  document.getElementById('garmentpile_image').style.opacity = "0";
+	}
+	garmentpile_stop()
+      </script>
+    </td>
+
+  
+	  
     <!-- GarmentLab -->
     <tr onmouseout="malle_stop()" onmouseover="malle_start()">
       <td style="padding:20px;width:30%;vertical-align:middle">
