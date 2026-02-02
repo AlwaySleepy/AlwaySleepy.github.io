@@ -7,7 +7,7 @@
     (function () {
         var a_idx = 0;
         window.onclick = function (event) {
-            var a = new Array( "🤖", "🤯","🏀","🎻","🎨","🎤","🏓");
+            var a = new Array( "🤖", "🤯","🎻","🎨","🎤","🏓");
 
             var heart = document.createElement("b");
             heart.onselectstart = new Function('event.returnValue=false');
@@ -171,6 +171,56 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:30px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+
+<!-- sparse meets dense -->
+	<tr onmouseout="sparsemeetsdense_stop()" onmouseover="sparsemeetsdense_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='sparsemeetsdense_image'>
+                  <img src='image/sparse_meet_dense.jpg' width="200"></div>
+                <img src='image/sparse_meet_dense.jpg' width="200">
+              </div>
+              <script type="text/javascript">
+                function sparsemeetsdense_start() {
+                  document.getElementById('sparsemeetsdense_image').style.opacity = "1";
+                }
+
+                function sparsemeetsdense_stop() {
+                  document.getElementById('sparsemeetsdense_image').style.opacity = "0";
+                }
+                sparsemeetsdense_stop()
+              </script>
+            </td>
+            
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://wayrise.github.io/DexGarmentLab/">
+              <papertitle> Sparse Meets Dense: Correspondence Guided Robotic Manipulation with Rigid-Deformable Interactions
+              </papertitle>
+              </a>
+              <br>
+              <strong>Ziyu Zhu*</strong>,
+              <a href="https://warshallrho.github.io/">Ruihai Wu</a>*,
+              <a href="https://yuechen0614.github.io/">Yue Chen</a>,
+              Xirui Liang,
+              Hojin Bae,
+			  Yuran Wang,
+              <a href="http://zsdonghao.github.io/">Hao Dong</a>
+              <br>
+              <em>ICRA 2026</em>
+              <br>
+              <a href="https://sparse-meets-dense.github.io/">project page</a>
+              /
+              <!-- <a href="https://arxiv.org/abs/2505.11032">paper</a> -->
+             paper (coming soon)
+              /
+              <!-- <a href="https://github.com/wayrise/DexGarmentLab">code</a> -->
+				code (coming soon)
+            
+              <p></p>
+              <p> We formulate contact-rich interactions between rigid and deformable bodies as optimization problems with keypoint constraints. We introduce sparse keypoints and dense correspondences to extract and track task-related physical information. </p>
+            </td>
+          </tr>
+			
 
 <!-- dexgarmentlab -->
 	<tr onmouseout="dexgarmentlab_stop()" onmouseover="dexgarmentlab_start()">
