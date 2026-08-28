@@ -3,53 +3,6 @@
 
 <!-- head -->
 <head>
-  <script>
-    (function () {
-        var a_idx = 0;
-        window.onclick = function (event) {
-            var a = new Array( "🤖", "🤯","🎨","🎤","🏓");
-
-            var heart = document.createElement("b");
-            heart.onselectstart = new Function('event.returnValue=false');
-
-            document.body.appendChild(heart).innerHTML = a[a_idx];
-            a_idx = (a_idx + 1) % a.length;
-            heart.style.cssText = "position: fixed;left:-100%;";
-
-            var f = 16, 
-                x = event.clientX - f / 2, 
-                y = event.clientY - f,
-                c = randomColor(), 
-                a = 1,
-                s = 1.2; 
-
-            var timer = setInterval(function () { 
-                if (a <= 0) {
-                    document.body.removeChild(heart);
-                    clearInterval(timer);
-                } else {
-                    heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
-                        c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
-                        s + ");";
-
-                    y--;
-                    a -= 0.016;
-                    s += 0.002;
-                }
-            }, 15)
-
-        }
-        function randomColor() {
-
-            return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
-            .random() * 255)) + ")";
-
-        }
-    }());
-
-  </script>
-
-
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Ziyu Zhu      诸子瑜</title>
 
@@ -57,6 +10,7 @@
 
   <meta name="author" content="Ziyu Zhu">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4fbff">
   
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link rel="icon" type="image/png" href="image/myprofile.jpg">
@@ -85,39 +39,30 @@
 
 
   <!-- self-intro --> 
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <table class="hero-card" style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr style="padding:0px">
-            <td style="padding:2%;width:55%;vertical-align:middle">
-              <p style="text-align:center">
+            <td class="hero-copy" style="padding:2%;width:55%;vertical-align:middle">
+              <p class="name-line" style="text-align:center">
                 <name> Ziyu Zhu</name>
-                <!-- <span style="font-size:20px ">将鼠标指向这里:</span>
-                <a style="color:#3300FF; font-size:20px; font-style:italic " onMouseMove="move()" onMouseOut="return out();">将飞出一个标记</a> -->
 
               </p>
-              <p style="text-align: justify">
-            
-                </intro>
-                <intro>I am a fourth-year student at the <a href="https://eecs.pku.edu.cn/" target="_blank">
-                  <d>School of Electronic Engineering and Computer Science(EECS)</d></a> of
-                   <a href="https://english.pku.edu.cn/" target="_blank"><d>Peking University</d></a>,
-                  advised by Prof. <a href="https://zsdonghao.github.io/" target="_blank">
-                    <d>Hao Dong</d></a> and Dr. <a href="https://warshallrho.github.io/" target="_blank"><d>Ruihai Wu</d></a> at <a href="https://zsdonghao.github.io/#lab" target="_blank"><d>Hyperplane Lab</d></a>.
-					Currently, I am fortunate to work with Prof. <a href="https://shenlong.web.illinois.edu/" target="_blank"><d>Shenlong Wang</d></a> at UIUC as a research intern.
+              <div class="intro-copy">
+                <p>I am a Ph.D. student at the <a href="https://www.gatech.edu/" target="_blank"><d>Georgia Institute of Technology</d></a>,
+                  advised by Prof. <a href="https://faculty.cc.gatech.edu/~danfei/" target="_blank"><d>Danfei Xu</d></a>.
+                  I received my B.S. degree in Computer Science from <a href="https://english.pku.edu.cn/" target="_blank"><d>Peking University</d></a>
+                  and previously conducted research at the <a href="https://illinois.edu/" target="_blank"><d>University of Illinois Urbana-Champaign</d></a>
+                  with Prof. <a href="https://shenlong.web.illinois.edu/" target="_blank"><d>Shenlong Wang</d></a>.</p>
                 
-		<p>
-		My research interest lies in robotics and computer vision, with the goal of
+                <p>My research interest lies in robotics and computer vision, with the goal of
                     enabling robots to perform dextrous tasks with adaptability, generalizability
-                    and safety.
-		</p>
-		<p>
-                Email: 2200012964 [at] stu.pku.edu.cn
-              	</p>
-                  </intro>
-              <p style="text-align:center">
-                <a href="mailto:2200012964@stu.pku.edu.cn" target="_blank">Email</a> &nbsp/&nbsp
+                    and safety.</p>
+                <p class="email-line">Email: ziyu [at] gatech.edu</p>
+              </div>
+              <p class="social-links" style="text-align:center">
+                <a href="mailto:ziyu@gatech.edu" target="_blank">Email</a> &nbsp/&nbsp
 
                 <a href="https://github.com/AlwaySleepy/" target="_blank">Github</a>&nbsp/&nbsp
                 <a href="pdf/cv.pdf" target="_blank">CV</a>&nbsp/&nbsp
@@ -125,10 +70,10 @@
 				  
               </p>
             </td>
-            <td style="padding:0%; width:26%; max-width:26%;"> 
+            <td class="portrait-cell" style="padding:0%; width:26%; max-width:26%;">
               <br>
            
-              <img style="padding:1%; width:100%; max-width:80%;  display: block; margin-left: auto; margin-right: auto; " alt="profile photo" src="image/ziyu_zhu.jpg">
+              <img class="portrait" style="padding:1%; width:100%; max-width:80%;  display: block; margin-left: auto; margin-right: auto; " alt="profile photo" src="image/ziyu_zhu.jpg">
               <div style="text-align:center">
                 <style>
                   .threesolid{
@@ -162,21 +107,21 @@
   </tbody></table>
 
 	
-<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+<table class="section-heading" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>Selected Publications</heading>&nbsp&nbsp&nbsp&nbsp&nbsp (* denotes equal contribution)
             </td>
           </tr>
         </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:30px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <table class="publication-list" style="width:100%;border:0px;border-spacing:30px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 
 			
 
 <!-- dexgarmentlab -->
-	<tr onmouseout="dexgarmentlab_stop()" onmouseover="dexgarmentlab_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
+	<tr class="publication-card" onmouseout="dexgarmentlab_stop()" onmouseover="dexgarmentlab_start()">
+            <td class="publication-image" style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
                 <div class="two" id='dexgarmentlab_image'>
                   <img src='image/dexgarmentlab.jpg' width="200"></div>
@@ -194,7 +139,7 @@
               </script>
             </td>
             
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td class="publication-copy" style="padding:20px;width:75%;vertical-align:middle">
               <a href="https://wayrise.github.io/DexGarmentLab/">
               <papertitle> DexGarmentLab: Dexterous Garment Manipulation Environment with Generalizable Policy
               </papertitle>
@@ -232,8 +177,8 @@
 
 			
  <!-- garment pile -->
-    <tr onmouseout="garmentpile_stop()" onmouseover="garmentpile_start()">
-    <td style="padding:20px;width:25%;vertical-align:middle">
+    <tr class="publication-card" onmouseout="garmentpile_stop()" onmouseover="garmentpile_start()">
+    <td class="publication-image" style="padding:20px;width:25%;vertical-align:middle">
       <div class="one">
 	<div class="two" id='garmentpile_image'>
 	  <img src='image/garmentpile.jpg' width="190" align="margin-right"></div>
@@ -251,7 +196,7 @@
       </script>
     </td>
 
-<td style="padding:20px;width:75%;vertical-align:middle">
+<td class="publication-copy" style="padding:20px;width:75%;vertical-align:middle">
               <a href="https://garmentpile.github.io/">
               <papertitle>GarmentPile: Point-Level Visual Affordance Guided Retrieval and Adaptation for Cluttered Garments Manipulation
               </papertitle>
@@ -286,8 +231,8 @@
 	  
     <!-- GarmentLab -->
 
-<tr onmouseout="garmentlab_stop()" onmouseover="garmentlab_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
+<tr class="publication-card" onmouseout="garmentlab_stop()" onmouseover="garmentlab_start()">
+            <td class="publication-image" style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
                 <div class="two" id='garmentlab_image'>
                   <img src='image/garmentlab.png' width="187"></div>
@@ -306,7 +251,7 @@
             </td>
 	
 
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td class="publication-copy" style="padding:20px;width:75%;vertical-align:middle">
               <a href="https://garmentlab.github.io/">
               <papertitle>GarmentLab: A Unified Simulation and Benchmark for Garment Manipulation
               </papertitle>
@@ -344,28 +289,42 @@
   </tbody></table>
 
 	
-  <table width="100%" align="center" border="0" cellpadding="10"><tbody>
-      <br>
-          <heading>Honors and Awards</heading>
-      <br>
-          <tr>
-            <td width="75%" valign="center">
-              <br>
-              Huawei Scholarship (School-level), Peking University, 2025
-              <br>
-              Merit Student Award, Peking University, 2025
-              <br>
-            </td>
-          </tr>
+  <table class="section-heading info-heading" width="100%" align="center" border="0"><tbody>
+    <tr>
+      <td><heading>Honors and Awards</heading></td>
+    </tr>
+  </tbody></table>
+
+  <table class="info-section honors-section" width="100%" align="center" border="0" cellpadding="10"><tbody>
+    <tr class="honors-card">
+      <td width="75%" valign="center">
+        Huawei Scholarship (School-level), Peking University, 2025
+        <br>
+        Merit Student Award, Peking University, 2025
+      </td>
+    </tr>
+  </tbody></table>
 
 	
 
   <!-- Experience -->
 
-  <table width="100%" align="center" border="0" cellpadding="10"><tbody>
-      <br>
-          <heading>Experience</heading>
-      <br>
+  <table class="section-heading info-heading" width="100%" align="center" border="0"><tbody>
+    <tr>
+      <td><heading>Experience</heading></td>
+    </tr>
+  </tbody></table>
+
+  <table class="info-section experience-section" width="100%" align="center" border="0" cellpadding="10"><tbody>
+      <tr class="experience-card">
+          <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle"><img src="image/GT.png", width="108" alt="Georgia Tech logo"></td>
+          <td width="90%" valign="center">
+            <strong><a href="https://www.gatech.edu/" target="_blank"><papertitle>Georgia Institute of Technology (Georgia Tech)</papertitle></a></strong>
+            <br> <em>2026.8 - Present</em>
+            <br> <strong> Ph.D. Student</strong>
+            <br> Advisor: <a href="https://faculty.cc.gatech.edu/~danfei/" target="_blank">Danfei Xu</a>
+          </td>
+      </tr>
       
       <!-- <tr>
         <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/galbot.png", width="108"></td>
@@ -395,25 +354,23 @@
           <br> GPA Ranking : 1<sup>st</sup>
           <br> Academic Advisor: Prof. <a href="https://cfcs.pku.edu.cn/baoquan/" target="_blank">Baoquan Chen</a>
         </td>
-    </tr> -->
-      <tr>
-          <br>
+      </tr> -->
+      <tr class="experience-card">
           <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle"><img src="image/UIUC.png", width="108"></td>
           <td width="90%" valign="center">
             <strong><a href="https://illinois.edu/" target="_blank"><papertitle>University of Illinois Urbana-Champaign (UIUC)</papertitle></a></strong>
-            <br> <em>2025.6 - Present</em>
+            <br> <em>2025.6 - 2026.5</em>
             <br> <strong> Research Intern</strong>
             <br> Research Advisor: <a href="https://shenlong.web.illinois.edu/" target="_blank">Shenlong Wang</a>
           </td>
       </tr>
 	  
-      <tr>
-          <br>
+      <tr class="experience-card">
           <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle"><img src="image/PKU.png", width="108"></td>
           <td width="90%" valign="center">
             <strong><a href="https://english.pku.edu.cn/" target="_blank"><papertitle>Peking University (PKU)</papertitle></a></strong>
-            <br> <em>2022.09 - Present</em>
-            <br> <strong> Undergraduate Student</strong>
+            <br> <em>2022.9 - 2026.7</em>
+            <br> <strong> B.S. in Computer Science</strong>
             <br> Major:  Computer Science (CS)
           </td>
       </tr>
@@ -421,15 +378,10 @@
         
   </tbody></table>
 
-  
-       <section class="section map-section">
-         <div style="text-align: center; margin: 40px auto; width: 100%; max-width: 300px;transform: scale(0.7); transform-origin: center;      /* 从中心缩放 */">
-           <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=JvJ0YISyVGIwoz8ECXVAwl6_h2D6tSrJyOHEmcNzxgc&cl=ffffff&w=a"></script>
-         </div>
-      </section>
+
 
   <!-- Aknowledgements -->
-  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <table class="footer-note" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr>
       <!-- <br> -->
       <!-- <br> -->
@@ -442,6 +394,26 @@
       </td>
       </tr>
   </tbody></table>
+
+  <script>
+    (function () {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var emojiIndex = 0;
+      var emojis = ['🤖', '🤯', '🎨', '🎤', '🏓'];
+
+      window.addEventListener('click', function (event) {
+        if (reduceMotion) return;
+        var emoji = document.createElement('span');
+        emoji.className = 'click-emoji';
+        emoji.textContent = emojis[emojiIndex];
+        emojiIndex = (emojiIndex + 1) % emojis.length;
+        emoji.style.left = event.clientX + 'px';
+        emoji.style.top = event.clientY + 'px';
+        document.body.appendChild(emoji);
+        window.setTimeout(function () { emoji.remove(); }, 1400);
+      });
+    }());
+  </script>
  
 </body>
 </html>
