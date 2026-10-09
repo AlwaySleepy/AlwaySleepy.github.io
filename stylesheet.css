@@ -299,8 +299,12 @@ h2 .note {
   border: 1px solid var(--line);
 }
 
-.pub-thumb-empty {
-  background: var(--accent-soft);
+video.pub-thumb {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  align-self: flex-start;
+  object-fit: contain;
+  background: #000;
 }
 
 .pub-body {
