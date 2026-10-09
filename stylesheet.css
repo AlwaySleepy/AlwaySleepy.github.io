@@ -10,10 +10,27 @@
   --accent-soft: #eaecf8;
   --font: "Lora", Georgia, "Songti SC", "SimSun", serif;
   --ui-font: "Inter Tight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", sans-serif;
+  --spotlight: #c2410c;
+  --logo-bg: transparent;
+  color-scheme: light;
+}
+
+/* Dark theme: chosen with the toggle, or following the device when no choice is saved. */
+:root[data-theme="dark"] {
+  --bg: #15161c;
+  --ink: #e7e8ee;
+  --muted: #a3a8b6;
+  --line: #2b2d38;
+  --accent: #a3b0f5;
+  --accent-hover: #c7cffd;
+  --accent-soft: #232842;
+  --spotlight: #fb923c;
+  --logo-bg: #fff;
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #15161c;
     --ink: #e7e8ee;
     --muted: #a3a8b6;
@@ -21,13 +38,16 @@
     --accent: #a3b0f5;
     --accent-hover: #c7cffd;
     --accent-soft: #232842;
+    --spotlight: #fb923c;
+    --logo-bg: #fff;
+    color-scheme: dark;
   }
+}
 
-  .topbar-logo img,
-  .exp img[src*="GT"] {
-    background: #fff;
-    border-radius: 4px;
-  }
+.topbar-logo img,
+.exp img[src*="GT"] {
+  background: var(--logo-bg);
+  border-radius: 4px;
 }
 
 * {
@@ -109,7 +129,42 @@ footer {
 
 .topbar-links {
   display: flex;
+  align-items: center;
   gap: 22px;
+}
+
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.theme-toggle svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+.theme-toggle .icon-sun,
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
 }
 
 .topbar-links a {
@@ -161,14 +216,8 @@ h2 .note {
 }
 
 .badge {
-  color: #c2410c;
+  color: var(--spotlight);
   font-weight: 700;
-}
-
-@media (prefers-color-scheme: dark) {
-  .badge {
-    color: #fb923c;
-  }
 }
 
 /* Intro: profile column on the left, bio on the right (after enxinsong.com). */
@@ -450,6 +499,10 @@ footer {
 
   .topbar-logo img {
     height: 28px;
+  }
+
+  .topbar-links {
+    gap: 14px;
   }
 
   .topbar-links {
