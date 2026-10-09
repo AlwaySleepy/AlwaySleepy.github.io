@@ -6,11 +6,11 @@
   <title>Ziyu Zhu 诸子瑜</title>
   <meta name="author" content="Ziyu Zhu">
   <meta name="description" content="Ziyu Zhu, Ph.D. student in robotics at Georgia Tech.">
-  <meta name="theme-color" content="#faf8f3">
+  <meta name="theme-color" content="#ffffff">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
   <link rel="stylesheet" href="stylesheet.css">
   <link rel="icon" type="image/png" href="image/github-avatar.png?v=2">
   <link rel="apple-touch-icon" href="image/github-avatar.png?v=2">
@@ -37,19 +37,10 @@
 
     <!-- intro -->
     <header class="intro" id="home">
-      <div class="portrait-wrap">
-        <img class="portrait" src="image/ziyu_zhu.jpg" alt="Photo of Ziyu Zhu">
-      </div>
-      <div class="intro-text">
-        <h1 class="name">Ziyu Zhu <span class="name-zh">诸子瑜</span></h1>
-        <p class="role">Ph.D. Student in Robotics @ Georgia Tech</p>
-        <p>I am a Ph.D. student at the <a href="https://www.gatech.edu/" target="_blank">Georgia Institute of Technology</a>,
-          advised by Prof. <a href="https://faculty.cc.gatech.edu/~danfei/" target="_blank">Danfei Xu</a>.
-          I received my B.S. degree in Computer Science from <a href="https://english.pku.edu.cn/" target="_blank">Peking University</a>
-          and previously conducted research at the <a href="https://illinois.edu/" target="_blank">University of Illinois Urbana-Champaign</a>
-          with Prof. <a href="https://shenlong.web.illinois.edu/" target="_blank">Shenlong Wang</a>.</p>
-        <p>My research interest lies in <span class="mark">robotics</span> and <span class="mark">computer vision</span>, with the goal of
-          enabling robots to perform dexterous tasks with adaptability, generalizability and safety.</p>
+      <img class="portrait" src="image/ziyu_zhu.jpg" alt="Photo of Ziyu Zhu">
+      <div class="profile">
+        <h1 class="name">Ziyu Zhu <span class="name-zh">(诸子瑜)</span></h1>
+        <p class="role">Ph.D. Student @ Georgia Tech Robotics</p>
         <div class="links">
           <a href="mailto:ziyu@gatech.edu">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5zm2 .9v9.6h14V7.4l-7 5.1z M6.2 7h11.6L12 11.2z"/></svg>
@@ -66,6 +57,16 @@
         </div>
       </div>
     </header>
+
+    <section class="about">
+      <p>I am a Ph.D. student at the <a href="https://www.gatech.edu/" target="_blank">Georgia Institute of Technology</a>,
+        advised by Prof. <a href="https://faculty.cc.gatech.edu/~danfei/" target="_blank">Danfei Xu</a>.
+        I received my B.S. degree in Computer Science from <a href="https://english.pku.edu.cn/" target="_blank">Peking University</a>
+        and previously conducted research at the <a href="https://illinois.edu/" target="_blank">University of Illinois Urbana-Champaign</a>
+        with Prof. <a href="https://shenlong.web.illinois.edu/" target="_blank">Shenlong Wang</a>.</p>
+      <p>My research interest lies in <strong>robotics</strong> and <strong>computer vision</strong>, with the goal of
+        enabling robots to perform dexterous tasks with adaptability, generalizability and safety.</p>
+    </section>
 
     <!-- news -->
     <section id="news">
@@ -85,7 +86,6 @@
       <article class="pub">
         <div class="pub-thumb pub-thumb-empty" aria-hidden="true"></div>
         <div class="pub-body">
-          <div class="venue"><span class="venue-tag">CoRL 2026</span><span class="badge">Spotlight</span></div>
           <a class="pub-title" href="https://more-robo.github.io/" target="_blank">MoRE: Mixture-of-Experts for Multi-Physics Robotic World Models</a>
           <p class="authors">
             <strong>Ziyu Zhu</strong>*,
@@ -95,6 +95,7 @@
             <a href="https://www.cs.cornell.edu/~weichiu/" target="_blank">Wei-Chiu Ma</a>,
             <a href="https://shenlong.web.illinois.edu/" target="_blank">Shenlong Wang</a>
           </p>
+          <div class="venue"><span class="venue-tag">CoRL 2026</span><span class="badge">Spotlight</span></div>
           <p class="summary">A 3D world model with a mixture of motion experts for multi-physics robotic manipulation.</p>
           <div class="pub-links">
             <a href="https://more-robo.github.io/" target="_blank">Project</a>
@@ -108,7 +109,6 @@
       <article class="pub">
         <img class="pub-thumb" src="image/dexgarmentlab.jpg" alt="DexGarmentLab teaser">
         <div class="pub-body">
-          <div class="venue"><span class="venue-tag">NeurIPS 2025</span><span class="badge">Spotlight</span></div>
           <a class="pub-title" href="https://wayrise.github.io/DexGarmentLab/" target="_blank">DexGarmentLab: Dexterous Garment Manipulation Environment with Generalizable Policy</a>
           <p class="authors">
             Yuran Wang*,
@@ -122,6 +122,7 @@
             <a href="https://people.eecs.berkeley.edu/~malik/" target="_blank">Jitendra Malik</a>,
             <a href="http://zsdonghao.github.io/" target="_blank">Hao Dong</a>
           </p>
+          <div class="venue"><span class="venue-tag">NeurIPS 2025</span><span class="badge">Spotlight</span></div>
           <p class="summary">A realistic sim environment for bimanual dexterous garment manipulation, with a new benchmark, an efficient data collection pipeline, and a policy framework that uses category-level visual correspondences for few-shot garment manipulation.</p>
           <div class="pub-links">
             <a href="https://wayrise.github.io/DexGarmentLab/" target="_blank">Project</a>
@@ -136,7 +137,6 @@
       <article class="pub">
         <img class="pub-thumb" src="image/garmentpile.jpg" alt="GarmentPile teaser">
         <div class="pub-body">
-          <div class="venue"><span class="venue-tag">CVPR 2025</span></div>
           <a class="pub-title" href="https://garmentpile.github.io/" target="_blank">GarmentPile: Point-Level Visual Affordance Guided Retrieval and Adaptation for Cluttered Garments Manipulation</a>
           <p class="authors">
             <a href="https://warshallrho.github.io/" target="_blank">Ruihai Wu</a>*,
@@ -146,6 +146,7 @@
             Jiarui Wang,
             <a href="http://zsdonghao.github.io/" target="_blank">Hao Dong</a>
           </p>
+          <div class="venue"><span class="venue-tag">CVPR 2025</span></div>
           <p class="summary">Point-level affordance that models the complex space and multi-modal manipulation candidates of garment piles, aware of garment geometry, structure, and inter-object relations, with further adaptation.</p>
           <div class="pub-links">
             <a href="https://garmentpile.github.io/" target="_blank">Project</a>
@@ -160,7 +161,6 @@
       <article class="pub">
         <img class="pub-thumb" src="image/garmentlab.png" alt="GarmentLab teaser">
         <div class="pub-body">
-          <div class="venue"><span class="venue-tag">NeurIPS 2024</span><span class="badge">Spotlight @ ICRA 2024 Workshop</span></div>
           <a class="pub-title" href="https://garmentlab.github.io/" target="_blank">GarmentLab: A Unified Simulation and Benchmark for Garment Manipulation</a>
           <p class="authors">
             Haoran Lu*,
@@ -174,7 +174,8 @@
             <a href="https://cypypccpy.github.io/" target="_blank">Yuanpei Chen</a>,
             <a href="http://zsdonghao.github.io/" target="_blank">Hao Dong</a>
           </p>
-          <p class="summary">A benchmark for garment manipulation in realistic 3D indoor scenes, covering diverse garment types, robots and manipulators including dexterous hands, and interactions with deformables, rigid bodies, fluids, and avatars. Spotlight at the <a href="https://deformable-workshop.github.io/icra2024/" target="_blank">ICRA 2024 Workshop on Deformable Object Manipulation</a>.</p>
+          <div class="venue"><span class="venue-tag">NeurIPS 2024</span><span class="badge">Spotlight</span> at the <a href="https://deformable-workshop.github.io/icra2024/" target="_blank">ICRA 2024 Deformable Object Manipulation Workshop</a></div>
+          <p class="summary">A benchmark for garment manipulation in realistic 3D indoor scenes, covering diverse garment types, robots and manipulators including dexterous hands, and interactions with deformables, rigid bodies, fluids, and avatars.</p>
           <div class="pub-links">
             <a href="https://garmentlab.github.io/" target="_blank">Project</a>
             <a href="https://arxiv.org/abs/2411.01200" target="_blank">Paper</a>
@@ -220,26 +221,17 @@
     <section id="honors">
       <h2>Honors &amp; Awards</h2>
       <ul class="plain-list">
-        <li><span>🏅 Huawei Scholarship (School-level), Peking University</span><span class="date">2025</span></li>
-        <li><span>🏅 Merit Student Award, Peking University</span><span class="date">2025</span></li>
+        <li><span>Huawei Scholarship (School-level), Peking University</span><span class="date">2025</span></li>
+        <li><span>Merit Student Award, Peking University</span><span class="date">2025</span></li>
       </ul>
     </section>
 
     <!-- misc -->
     <section id="misc">
       <h2>Misc</h2>
-      <div class="misc-grid">
-        <div class="misc-card">
-          <span class="misc-icon">🎭</span>
-          <h3>Musicals</h3>
-          <p>A member of the PKU Musical Society, cast as <strong>Camila</strong> in our production of <em>In the Heights</em> (2025–2026).</p>
-        </div>
-        <div class="misc-card">
-          <span class="misc-icon">🎨</span>
-          <h3>Drawing</h3>
-          <p>I love drawing in my spare time.</p>
-        </div>
-      </div>
+      <p>Outside the lab, I love <strong>drawing</strong> 🎨 and <strong>musicals</strong> 🎭.
+        At Peking University I was a member of the Musical Society, and was cast as <strong>Camila</strong>
+        in our production of <em>In the Heights</em> (2025–2026).</p>
     </section>
 
     <footer>
