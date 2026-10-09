@@ -244,7 +244,7 @@ h2 .note {
 /* Honeycomb-cell portrait (a nod to Georgia Tech's Yellow Jackets) with an offset purple hexagon behind it. */
 .portrait-hex {
   position: relative;
-  width: 175px;
+  width: 210px;
   aspect-ratio: 1 / 1.1547;
   margin: 0 0 18px -18px;
 }
@@ -552,7 +552,7 @@ footer {
   }
 
   .portrait-hex {
-    width: 150px;
+    width: 180px;
   }
 
   h2 .note {
