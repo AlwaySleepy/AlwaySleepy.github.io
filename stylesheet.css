@@ -12,6 +12,8 @@
   --ui-font: "Inter Tight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", sans-serif;
   --spotlight: #c2410c;
   --logo-bg: transparent;
+  --hex-shadow: #8e72e0;
+  --hexagon: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   color-scheme: light;
 }
 
@@ -26,6 +28,7 @@
   --accent-soft: #232842;
   --spotlight: #fb923c;
   --logo-bg: #fff;
+  --hex-shadow: #6f58c9;
   color-scheme: dark;
 }
 
@@ -40,6 +43,7 @@
     --accent-soft: #232842;
     --spotlight: #fb923c;
     --logo-bg: #fff;
+  --hex-shadow: #6f58c9;
     color-scheme: dark;
   }
 }
@@ -236,18 +240,35 @@ h2 .note {
   text-align: center;
 }
 
-.portrait {
+/* Honeycomb-cell portrait (a nod to Georgia Tech's Yellow Jackets) with an offset purple hexagon behind it. */
+.portrait-hex {
+  position: relative;
   width: 170px;
-  height: 170px;
-  margin-bottom: 8px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--line);
-  transition: border-color .3s ease;
+  aspect-ratio: 1 / 1.1547;
+  margin: 0 0 14px -14px;
 }
 
-.portrait:hover {
-  border-color: var(--accent);
+.portrait-hex::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--hex-shadow);
+  clip-path: var(--hexagon);
+  transform: translate(14px, 10px);
+  transition: transform .3s ease;
+}
+
+.portrait-hex:hover::before {
+  transform: translate(18px, 14px);
+}
+
+.portrait {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: var(--hexagon);
 }
 
 .name {
@@ -527,9 +548,8 @@ footer {
     flex-basis: auto;
   }
 
-  .portrait {
+  .portrait-hex {
     width: 140px;
-    height: 140px;
   }
 
   h2 .note {
