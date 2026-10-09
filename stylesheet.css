@@ -12,6 +12,12 @@
   --ui-font: "Inter Tight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", sans-serif;
   --spotlight: #c2410c;
   --logo-bg: transparent;
+  --hex-shadow: #e4dcfa;
+  --deco-1: #ece7fb;
+  --deco-2: #e5e8f2;
+  --deco-4: #e8ebf4;
+  /* Rounded hexagon used as a mask for the portrait and its shadow. */
+  --hexagon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 115.47'%3E%3Cpolygon points='50.00,8.08 93.00,32.91 93.00,82.56 50.00,107.39 7.00,82.56 7.00,32.91' fill='black' stroke='black' stroke-width='14' stroke-linejoin='round'/%3E%3C/svg%3E");
   color-scheme: light;
 }
 
@@ -26,6 +32,10 @@
   --accent-soft: #232842;
   --spotlight: #fb923c;
   --logo-bg: #fff;
+  --hex-shadow: #3a3160;
+  --deco-1: #1f1c30;
+  --deco-2: #1b1e2a;
+  --deco-4: #191b24;
   color-scheme: dark;
 }
 
@@ -40,6 +50,10 @@
     --accent-soft: #232842;
     --spotlight: #fb923c;
     --logo-bg: #fff;
+  --hex-shadow: #3a3160;
+  --deco-1: #1f1c30;
+  --deco-2: #1b1e2a;
+  --deco-4: #191b24;
     color-scheme: dark;
   }
 }
@@ -55,6 +69,7 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: 76px;
   -webkit-text-size-adjust: 100%;
@@ -222,9 +237,51 @@ h2 .note {
 
 /* Intro: profile column on the left, bio on the right (after enxinsong.com). */
 .intro {
+  position: relative;
   display: flex;
   gap: 48px;
   align-items: flex-start;
+}
+
+.intro > :not(.intro-deco) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Soft hexagons behind the intro, echoing the honeycomb portrait. */
+.intro-deco {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.deco {
+  position: absolute;
+  aspect-ratio: 1 / 1.1547;
+  -webkit-mask: var(--hexagon) center / 100% 100% no-repeat;
+  mask: var(--hexagon) center / 100% 100% no-repeat;
+}
+
+.deco-1 {
+  width: 300px;
+  top: -70px;
+  left: -110px;
+  background: var(--deco-1);
+}
+
+.deco-2 {
+  width: 220px;
+  right: -90px;
+  bottom: -40px;
+  background: var(--deco-2);
+}
+
+.deco-4 {
+  width: 120px;
+  top: -30px;
+  right: -40px;
+  background: var(--deco-4);
 }
 
 .profile {
@@ -236,18 +293,37 @@ h2 .note {
   text-align: center;
 }
 
-.portrait {
-  width: 170px;
-  height: 170px;
-  margin-bottom: 8px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--line);
-  transition: border-color .3s ease;
+/* Honeycomb-cell portrait (a nod to Georgia Tech's Yellow Jackets) with an offset purple hexagon behind it. */
+.portrait-hex {
+  position: relative;
+  width: 210px;
+  aspect-ratio: 1 / 1.1547;
+  margin: 0 0 18px -18px;
 }
 
-.portrait:hover {
-  border-color: var(--accent);
+.portrait-hex::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--hex-shadow);
+  -webkit-mask: var(--hexagon) center / 100% 100% no-repeat;
+  mask: var(--hexagon) center / 100% 100% no-repeat;
+  transform: translate(18px, 14px);
+  transition: transform .4s ease;
+}
+
+.portrait-hex:hover::before {
+  transform: translate(22px, 18px);
+}
+
+.portrait {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-mask: var(--hexagon) center / 100% 100% no-repeat;
+  mask: var(--hexagon) center / 100% 100% no-repeat;
 }
 
 .name {
@@ -493,6 +569,29 @@ footer {
 }
 
 @media (max-width: 760px) {
+  /* Clip the decoration at the screen edge so phones never scroll sideways. */
+  .intro-deco {
+    inset: -36px -16px 0;
+    overflow: hidden;
+  }
+
+  .deco-1 {
+    width: 240px;
+    top: -40px;
+    left: -90px;
+  }
+
+  .deco-2 {
+    width: 170px;
+    right: -70px;
+    bottom: auto;
+    top: 140px;
+  }
+
+  .deco-4 {
+    display: none;
+  }
+
   .topbar-inner {
     padding: 8px 16px;
   }
@@ -527,9 +626,8 @@ footer {
     flex-basis: auto;
   }
 
-  .portrait {
-    width: 140px;
-    height: 140px;
+  .portrait-hex {
+    width: 180px;
   }
 
   h2 .note {
