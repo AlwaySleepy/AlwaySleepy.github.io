@@ -12,8 +12,9 @@
   --ui-font: "Inter Tight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", sans-serif;
   --spotlight: #c2410c;
   --logo-bg: transparent;
-  --hex-shadow: #8e72e0;
-  --hexagon: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  --hex-shadow: #e4dcfa;
+  /* Rounded hexagon used as a mask for the portrait and its shadow. */
+  --hexagon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 115.47'%3E%3Cpolygon points='50.00,8.08 93.00,32.91 93.00,82.56 50.00,107.39 7.00,82.56 7.00,32.91' fill='black' stroke='black' stroke-width='14' stroke-linejoin='round'/%3E%3C/svg%3E");
   color-scheme: light;
 }
 
@@ -28,7 +29,7 @@
   --accent-soft: #232842;
   --spotlight: #fb923c;
   --logo-bg: #fff;
-  --hex-shadow: #6f58c9;
+  --hex-shadow: #3a3160;
   color-scheme: dark;
 }
 
@@ -43,7 +44,7 @@
     --accent-soft: #232842;
     --spotlight: #fb923c;
     --logo-bg: #fff;
-  --hex-shadow: #6f58c9;
+  --hex-shadow: #3a3160;
     color-scheme: dark;
   }
 }
@@ -243,9 +244,9 @@ h2 .note {
 /* Honeycomb-cell portrait (a nod to Georgia Tech's Yellow Jackets) with an offset purple hexagon behind it. */
 .portrait-hex {
   position: relative;
-  width: 170px;
+  width: 175px;
   aspect-ratio: 1 / 1.1547;
-  margin: 0 0 14px -14px;
+  margin: 0 0 18px -18px;
 }
 
 .portrait-hex::before {
@@ -253,13 +254,14 @@ h2 .note {
   position: absolute;
   inset: 0;
   background: var(--hex-shadow);
-  clip-path: var(--hexagon);
-  transform: translate(14px, 10px);
-  transition: transform .3s ease;
+  -webkit-mask: var(--hexagon) center / 100% 100% no-repeat;
+  mask: var(--hexagon) center / 100% 100% no-repeat;
+  transform: translate(18px, 14px);
+  transition: transform .4s ease;
 }
 
 .portrait-hex:hover::before {
-  transform: translate(18px, 14px);
+  transform: translate(22px, 18px);
 }
 
 .portrait {
@@ -268,7 +270,8 @@ h2 .note {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  clip-path: var(--hexagon);
+  -webkit-mask: var(--hexagon) center / 100% 100% no-repeat;
+  mask: var(--hexagon) center / 100% 100% no-repeat;
 }
 
 .name {
@@ -549,7 +552,7 @@ footer {
   }
 
   .portrait-hex {
-    width: 140px;
+    width: 150px;
   }
 
   h2 .note {
