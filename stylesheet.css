@@ -13,6 +13,10 @@
   --spotlight: #c2410c;
   --logo-bg: transparent;
   --hex-shadow: #e4dcfa;
+  --deco-1: #ece7fb;
+  --deco-2: #e5e8f2;
+  --deco-3: #d8cdf6;
+  --deco-4: #e8ebf4;
   /* Rounded hexagon used as a mask for the portrait and its shadow. */
   --hexagon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 115.47'%3E%3Cpolygon points='50.00,8.08 93.00,32.91 93.00,82.56 50.00,107.39 7.00,82.56 7.00,32.91' fill='black' stroke='black' stroke-width='14' stroke-linejoin='round'/%3E%3C/svg%3E");
   color-scheme: light;
@@ -30,6 +34,10 @@
   --spotlight: #fb923c;
   --logo-bg: #fff;
   --hex-shadow: #3a3160;
+  --deco-1: #1f1c30;
+  --deco-2: #1b1e2a;
+  --deco-3: #2e2752;
+  --deco-4: #191b24;
   color-scheme: dark;
 }
 
@@ -45,6 +53,10 @@
     --spotlight: #fb923c;
     --logo-bg: #fff;
   --hex-shadow: #3a3160;
+  --deco-1: #1f1c30;
+  --deco-2: #1b1e2a;
+  --deco-3: #2e2752;
+  --deco-4: #191b24;
     color-scheme: dark;
   }
 }
@@ -60,6 +72,7 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: 76px;
   -webkit-text-size-adjust: 100%;
@@ -227,9 +240,58 @@ h2 .note {
 
 /* Intro: profile column on the left, bio on the right (after enxinsong.com). */
 .intro {
+  position: relative;
   display: flex;
   gap: 48px;
   align-items: flex-start;
+}
+
+.intro > :not(.intro-deco) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Soft hexagons behind the intro, echoing the honeycomb portrait. */
+.intro-deco {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.deco {
+  position: absolute;
+  aspect-ratio: 1 / 1.1547;
+  -webkit-mask: var(--hexagon) center / 100% 100% no-repeat;
+  mask: var(--hexagon) center / 100% 100% no-repeat;
+}
+
+.deco-1 {
+  width: 300px;
+  top: -70px;
+  left: -110px;
+  background: var(--deco-1);
+}
+
+.deco-2 {
+  width: 220px;
+  right: -90px;
+  bottom: -40px;
+  background: var(--deco-2);
+}
+
+.deco-3 {
+  width: 46px;
+  top: 6px;
+  left: 236px;
+  background: var(--deco-3);
+}
+
+.deco-4 {
+  width: 120px;
+  top: -30px;
+  right: -40px;
+  background: var(--deco-4);
 }
 
 .profile {
@@ -517,6 +579,30 @@ footer {
 }
 
 @media (max-width: 760px) {
+  /* Clip the decoration at the screen edge so phones never scroll sideways. */
+  .intro-deco {
+    inset: -36px -16px 0;
+    overflow: hidden;
+  }
+
+  .deco-1 {
+    width: 240px;
+    top: -40px;
+    left: -90px;
+  }
+
+  .deco-2 {
+    width: 170px;
+    right: -70px;
+    bottom: auto;
+    top: 140px;
+  }
+
+  .deco-3,
+  .deco-4 {
+    display: none;
+  }
+
   .topbar-inner {
     padding: 8px 16px;
   }
