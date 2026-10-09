@@ -1,13 +1,15 @@
-/* Palette: white page, ink text, indigo-violet accent. */
+/* Fonts follow enxinsong.com: Lora for text, Inter Tight for compact UI labels.
+   Palette: barely-blue page, warm near-black text, indigo-blue accent. */
 :root {
-  --bg: #ffffff;
-  --ink: #1f2330;
-  --muted: #646b7a;
-  --line: #e7e8ee;
-  --accent: #5146b5;
-  --accent-hover: #3b318f;
-  --accent-soft: #f0eefb;
-  --font: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --bg: #f6f7fb;
+  --ink: #1d1d22;
+  --muted: #5e6170;
+  --line: #e3e5ee;
+  --accent: #3f4fb0;
+  --accent-hover: #2b3784;
+  --accent-soft: #eaecf8;
+  --font: "Lora", Georgia, "Songti SC", "SimSun", serif;
+  --ui-font: "Inter Tight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,9 +18,9 @@
     --ink: #e7e8ee;
     --muted: #a3a8b6;
     --line: #2b2d38;
-    --accent: #a99ff0;
-    --accent-hover: #c9c2ff;
-    --accent-soft: #262340;
+    --accent: #a3b0f5;
+    --accent-hover: #c7cffd;
+    --accent-soft: #232842;
   }
 
   .topbar-logo img,
@@ -43,8 +45,8 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font);
-  font-size: 18px;
-  line-height: 1.65;
+  font-size: 17.5px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -66,6 +68,18 @@ p {
 
 strong {
   font-weight: 600;
+}
+
+/* Compact UI text uses the sans companion, as on enxinsong.com. */
+.topbar-links a,
+.date,
+.badge,
+.links a,
+.cv-link,
+.pub-links,
+h2 .note,
+footer {
+  font-family: var(--ui-font);
 }
 
 /* Top bar */
@@ -126,8 +140,8 @@ h2 {
   margin: 0 0 18px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--line);
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 500;
   line-height: 1.3;
 }
 
@@ -157,62 +171,90 @@ h2 .note {
   }
 }
 
-/* Intro */
+/* Intro: profile column on the left, bio on the right (after enxinsong.com). */
 .intro {
   display: flex;
-  gap: 36px;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.profile {
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 6px;
+  text-align: center;
 }
 
 .portrait {
   width: 170px;
   height: 170px;
-  flex-shrink: 0;
+  margin-bottom: 8px;
   object-fit: cover;
   border-radius: 50%;
+  border: 3px solid var(--line);
+  transition: border-color .3s ease;
+}
+
+.portrait:hover {
+  border-color: var(--accent);
 }
 
 .name {
   margin: 0;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.name-zh {
-  color: var(--muted);
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.3;
 }
 
 .role {
-  margin: 6px 0 16px;
+  margin: 0;
   color: var(--muted);
-  font-size: 20px;
+  font-size: 16px;
+}
+
+.cv-link {
+  margin-top: 8px;
+  padding: 6px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--accent-soft);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cv-link:hover,
+.cv-link:focus-visible {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.about {
+  flex: 1;
+  min-width: 0;
+  padding-top: 8px;
 }
 
 .links {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 22px;
+  margin-top: 18px;
 }
 
 .links a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15.5px;
+  font-weight: 500;
 }
 
 .links a svg {
   width: 18px;
   height: 18px;
   fill: currentColor;
-}
-
-.about {
-  margin-top: 32px;
 }
 
 /* News */
@@ -271,7 +313,7 @@ h2 .note {
   margin-bottom: 4px;
   color: var(--ink);
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.4;
 }
 
@@ -347,7 +389,7 @@ h2 .note {
 
 .exp-title {
   color: var(--ink);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .exp p {
@@ -420,21 +462,17 @@ footer {
 
   .intro {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 20px;
+  }
+
+  .profile {
+    flex-basis: auto;
   }
 
   .portrait {
     width: 140px;
     height: 140px;
-  }
-
-  .name {
-    font-size: 34px;
-  }
-
-  .name-zh {
-    font-size: 24px;
   }
 
   h2 .note {
