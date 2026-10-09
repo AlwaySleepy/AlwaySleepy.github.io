@@ -6,59 +6,86 @@
   <title>Ziyu Zhu 诸子瑜</title>
   <meta name="author" content="Ziyu Zhu">
   <meta name="description" content="Ziyu Zhu, Ph.D. student in robotics at Georgia Tech.">
-  <meta name="theme-color" content="#fbfaf7">
+  <meta name="theme-color" content="#faf8f3">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&display=swap">
   <link rel="stylesheet" href="stylesheet.css">
   <link rel="icon" type="image/png" href="image/github-avatar.png?v=2">
   <link rel="apple-touch-icon" href="image/github-avatar.png?v=2">
 </head>
 
 <body>
+  <!-- top bar -->
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <a class="topbar-logo" href="https://www.gatech.edu/" target="_blank" aria-label="Georgia Tech">
+        <img src="image/GT.png" alt="Georgia Tech logo">
+      </a>
+      <div class="topbar-links">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#misc">Misc</a>
+      </div>
+    </div>
+  </nav>
+
   <main class="page">
 
     <!-- intro -->
-    <header class="intro">
+    <header class="intro" id="home">
+      <div class="portrait-wrap">
+        <img class="portrait" src="image/ziyu_zhu.jpg" alt="Photo of Ziyu Zhu">
+      </div>
       <div class="intro-text">
         <h1 class="name">Ziyu Zhu <span class="name-zh">诸子瑜</span></h1>
+        <p class="role">Ph.D. Student in Robotics @ Georgia Tech</p>
         <p>I am a Ph.D. student at the <a href="https://www.gatech.edu/" target="_blank">Georgia Institute of Technology</a>,
           advised by Prof. <a href="https://faculty.cc.gatech.edu/~danfei/" target="_blank">Danfei Xu</a>.
           I received my B.S. degree in Computer Science from <a href="https://english.pku.edu.cn/" target="_blank">Peking University</a>
           and previously conducted research at the <a href="https://illinois.edu/" target="_blank">University of Illinois Urbana-Champaign</a>
           with Prof. <a href="https://shenlong.web.illinois.edu/" target="_blank">Shenlong Wang</a>.</p>
-        <p>My research interest lies in robotics and computer vision, with the goal of
-          enabling robots to perform dexterous tasks with adaptability, generalizability
-          and safety.</p>
-        <p class="links">
-          <a href="mailto:ziyu@gatech.edu">Email</a>
-          <a href="https://github.com/AlwaySleepy/" target="_blank">GitHub</a>
-          <a href="pdf/cv.pdf" target="_blank">CV</a>
-          <a href="https://scholar.google.com/citations?user=dKxSoUUAAAAJ&amp;hl=zh-CN" target="_blank">Google Scholar</a>
-        </p>
+        <p>My research interest lies in <span class="mark">robotics</span> and <span class="mark">computer vision</span>, with the goal of
+          enabling robots to perform dexterous tasks with adaptability, generalizability and safety.</p>
+        <div class="links">
+          <a href="mailto:ziyu@gatech.edu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5zm2 .9v9.6h14V7.4l-7 5.1z M6.2 7h11.6L12 11.2z"/></svg>
+            Email</a>
+          <a href="https://github.com/AlwaySleepy/" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
+            GitHub</a>
+          <a href="pdf/cv.pdf" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V8h4.5zM7 12v1.6h10V12zm0 4v1.6h7V16z"/></svg>
+            CV</a>
+          <a href="https://scholar.google.com/citations?user=dKxSoUUAAAAJ&amp;hl=zh-CN" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9.5l4 2.4V17c0 .4.2.8.6 1C7.4 19.3 9.6 20 12 20s4.6-.7 6.4-2c.4-.2.6-.6.6-1v-5.1l2-1.2V16h2V9.5z"/></svg>
+            Google Scholar</a>
+        </div>
       </div>
-      <img class="portrait" src="image/ziyu_zhu.jpg" alt="Photo of Ziyu Zhu">
     </header>
 
     <!-- news -->
-    <section>
+    <section id="news">
       <h2>Recent News</h2>
       <ul class="news">
-        <li><span class="date">2026 / 09</span><span><a href="https://more-robo.github.io/" target="_blank">MoRE</a> is accepted to CoRL 2026 as a <span class="badge">Spotlight</span>. See you in Austin! 🤠</span></li>
-        <li><span class="date">2026 / 08</span><span>Started my Ph.D. at <a href="https://www.gatech.edu/" target="_blank">Georgia Tech</a>. 🐝</span></li>
-        <li><span class="date">2026 / 07</span><span>Graduated from <a href="https://english.pku.edu.cn/" target="_blank">Peking University</a>. 🎓</span></li>
+        <li><span class="date">2026.09</span><p><a href="https://more-robo.github.io/" target="_blank">MoRE</a> is accepted to <strong>CoRL 2026</strong> as a <span class="badge">Spotlight</span>. See you in Austin! 🤠</p></li>
+        <li><span class="date">2026.08</span><p>Started my Ph.D. at <a href="https://www.gatech.edu/" target="_blank">Georgia Tech</a>. 🐝</p></li>
+        <li><span class="date">2026.07</span><p>Graduated from <a href="https://english.pku.edu.cn/" target="_blank">Peking University</a>. 🎓</p></li>
       </ul>
     </section>
 
     <!-- publications -->
-    <section>
-      <h2>Selected Publications <span class="note">* denotes equal contribution</span></h2>
+    <section id="publications">
+      <h2>Selected Publications <span class="note">* equal contribution</span></h2>
 
       <!-- MoRE -->
       <article class="pub">
         <div class="pub-thumb pub-thumb-empty" aria-hidden="true"></div>
         <div class="pub-body">
+          <div class="venue"><span class="venue-tag">CoRL 2026</span><span class="badge">Spotlight</span></div>
           <a class="pub-title" href="https://more-robo.github.io/" target="_blank">MoRE: Mixture-of-Experts for Multi-Physics Robotic World Models</a>
           <p class="authors">
             <strong>Ziyu Zhu</strong>*,
@@ -68,13 +95,12 @@
             <a href="https://www.cs.cornell.edu/~weichiu/" target="_blank">Wei-Chiu Ma</a>,
             <a href="https://shenlong.web.illinois.edu/" target="_blank">Shenlong Wang</a>
           </p>
-          <p class="venue"><em>CoRL 2026</em> <span class="badge">Spotlight</span></p>
-          <p class="pub-links">
-            <a href="https://more-robo.github.io/" target="_blank">project page</a>
-            <a href="https://github.com/MoRE-Robo/MoRE-WM" target="_blank">code</a>
-            <a href="https://huggingface.co/datasets/MoRE-WM/MoRE-Data" target="_blank">data</a>
-          </p>
           <p class="summary">A 3D world model with a mixture of motion experts for multi-physics robotic manipulation.</p>
+          <div class="pub-links">
+            <a href="https://more-robo.github.io/" target="_blank">Project</a>
+            <a href="https://github.com/MoRE-Robo/MoRE-WM" target="_blank">Code</a>
+            <a href="https://huggingface.co/datasets/MoRE-WM/MoRE-Data" target="_blank">Data</a>
+          </div>
         </div>
       </article>
 
@@ -82,6 +108,7 @@
       <article class="pub">
         <img class="pub-thumb" src="image/dexgarmentlab.jpg" alt="DexGarmentLab teaser">
         <div class="pub-body">
+          <div class="venue"><span class="venue-tag">NeurIPS 2025</span><span class="badge">Spotlight</span></div>
           <a class="pub-title" href="https://wayrise.github.io/DexGarmentLab/" target="_blank">DexGarmentLab: Dexterous Garment Manipulation Environment with Generalizable Policy</a>
           <p class="authors">
             Yuran Wang*,
@@ -95,14 +122,13 @@
             <a href="https://people.eecs.berkeley.edu/~malik/" target="_blank">Jitendra Malik</a>,
             <a href="http://zsdonghao.github.io/" target="_blank">Hao Dong</a>
           </p>
-          <p class="venue"><em>NeurIPS 2025</em> <span class="badge">Spotlight</span></p>
-          <p class="pub-links">
-            <a href="https://wayrise.github.io/DexGarmentLab/" target="_blank">project page</a>
-            <a href="https://arxiv.org/abs/2505.11032" target="_blank">paper</a>
-            <a href="https://github.com/wayrise/DexGarmentLab" target="_blank">code</a>
-            <a href="https://huggingface.co/datasets/wayrise/DexGarmentLab/tree/main" target="_blank">data</a>
-          </p>
-          <p class="summary">We introduce DexGarmentLab, a realistic sim environment for bimanual dexterous garment manipulation. Based on this environment, we propose a new benchmark, an efficient data collection pipeline, and a novel policy framework that uses category-level visual correspondences for few-shot garment manipulation.</p>
+          <p class="summary">A realistic sim environment for bimanual dexterous garment manipulation, with a new benchmark, an efficient data collection pipeline, and a policy framework that uses category-level visual correspondences for few-shot garment manipulation.</p>
+          <div class="pub-links">
+            <a href="https://wayrise.github.io/DexGarmentLab/" target="_blank">Project</a>
+            <a href="https://arxiv.org/abs/2505.11032" target="_blank">Paper</a>
+            <a href="https://github.com/wayrise/DexGarmentLab" target="_blank">Code</a>
+            <a href="https://huggingface.co/datasets/wayrise/DexGarmentLab/tree/main" target="_blank">Data</a>
+          </div>
         </div>
       </article>
 
@@ -110,6 +136,7 @@
       <article class="pub">
         <img class="pub-thumb" src="image/garmentpile.jpg" alt="GarmentPile teaser">
         <div class="pub-body">
+          <div class="venue"><span class="venue-tag">CVPR 2025</span></div>
           <a class="pub-title" href="https://garmentpile.github.io/" target="_blank">GarmentPile: Point-Level Visual Affordance Guided Retrieval and Adaptation for Cluttered Garments Manipulation</a>
           <p class="authors">
             <a href="https://warshallrho.github.io/" target="_blank">Ruihai Wu</a>*,
@@ -119,14 +146,13 @@
             Jiarui Wang,
             <a href="http://zsdonghao.github.io/" target="_blank">Hao Dong</a>
           </p>
-          <p class="venue"><em>CVPR 2025</em></p>
-          <p class="pub-links">
-            <a href="https://garmentpile.github.io/" target="_blank">project page</a>
-            <a href="https://arxiv.org/abs/2503.09243" target="_blank">paper</a>
-            <a href="https://github.com/AlwaySleepy/Garment-Pile" target="_blank">code</a>
-            <a href="https://garmentpile.github.io/static/videos/Introduction.mp4" target="_blank">video</a>
-          </p>
-          <p class="summary">We propose to learn point-level affordance to model the complex space and multi-modal manipulation candidates of garment piles, with novel designs for the awareness of garment geometry, structure, inter-object relations, and further adaptation.</p>
+          <p class="summary">Point-level affordance that models the complex space and multi-modal manipulation candidates of garment piles, aware of garment geometry, structure, and inter-object relations, with further adaptation.</p>
+          <div class="pub-links">
+            <a href="https://garmentpile.github.io/" target="_blank">Project</a>
+            <a href="https://arxiv.org/abs/2503.09243" target="_blank">Paper</a>
+            <a href="https://github.com/AlwaySleepy/Garment-Pile" target="_blank">Code</a>
+            <a href="https://garmentpile.github.io/static/videos/Introduction.mp4" target="_blank">Video</a>
+          </div>
         </div>
       </article>
 
@@ -134,6 +160,7 @@
       <article class="pub">
         <img class="pub-thumb" src="image/garmentlab.png" alt="GarmentLab teaser">
         <div class="pub-body">
+          <div class="venue"><span class="venue-tag">NeurIPS 2024</span><span class="badge">Spotlight @ ICRA 2024 Workshop</span></div>
           <a class="pub-title" href="https://garmentlab.github.io/" target="_blank">GarmentLab: A Unified Simulation and Benchmark for Garment Manipulation</a>
           <p class="authors">
             Haoran Lu*,
@@ -147,67 +174,76 @@
             <a href="https://cypypccpy.github.io/" target="_blank">Yuanpei Chen</a>,
             <a href="http://zsdonghao.github.io/" target="_blank">Hao Dong</a>
           </p>
-          <p class="venue"><em>NeurIPS 2024</em></p>
-          <p class="venue"><span class="badge">Spotlight</span> at the <a href="https://deformable-workshop.github.io/icra2024/" target="_blank">ICRA 2024 Workshop on Deformable Object Manipulation</a></p>
-          <p class="pub-links">
-            <a href="https://garmentlab.github.io/" target="_blank">project page</a>
-            <a href="https://arxiv.org/abs/2411.01200" target="_blank">paper</a>
-            <a href="https://github.com/GarmentLab/GarmentLab" target="_blank">code</a>
-            <a href="https://garmentlab.github.io/static/videos/ID_7401.mp4" target="_blank">video</a>
-          </p>
-          <p class="summary">We present GarmentLab, a benchmark designed for garment manipulation within realistic 3D indoor scenes. Our benchmark encompasses a diverse range of garment types, robotic systems and manipulators including dexterous hands. The multitude of tasks included in the benchmark enables further exploration of the interactions between garments, deformable objects, rigid bodies, fluids, and avatars.</p>
+          <p class="summary">A benchmark for garment manipulation in realistic 3D indoor scenes, covering diverse garment types, robots and manipulators including dexterous hands, and interactions with deformables, rigid bodies, fluids, and avatars. Spotlight at the <a href="https://deformable-workshop.github.io/icra2024/" target="_blank">ICRA 2024 Workshop on Deformable Object Manipulation</a>.</p>
+          <div class="pub-links">
+            <a href="https://garmentlab.github.io/" target="_blank">Project</a>
+            <a href="https://arxiv.org/abs/2411.01200" target="_blank">Paper</a>
+            <a href="https://github.com/GarmentLab/GarmentLab" target="_blank">Code</a>
+            <a href="https://garmentlab.github.io/static/videos/ID_7401.mp4" target="_blank">Video</a>
+          </div>
         </div>
       </article>
     </section>
 
+    <!-- experience -->
+    <section id="experience">
+      <h2>Education &amp; Experience</h2>
+      <div class="exp-grid">
+        <div class="exp">
+          <img src="image/GT.png" alt="Georgia Tech logo">
+          <div>
+            <a class="exp-title" href="https://www.gatech.edu/" target="_blank">Georgia Institute of Technology</a>
+            <p>Ph.D. Student · Advisor: <a href="https://faculty.cc.gatech.edu/~danfei/" target="_blank">Danfei Xu</a></p>
+            <span class="date">2026.08 – Present</span>
+          </div>
+        </div>
+        <div class="exp">
+          <img src="image/UIUC.png" alt="UIUC logo">
+          <div>
+            <a class="exp-title" href="https://illinois.edu/" target="_blank">University of Illinois Urbana-Champaign</a>
+            <p>Research Intern · Advisor: <a href="https://shenlong.web.illinois.edu/" target="_blank">Shenlong Wang</a></p>
+            <span class="date">2025.06 – 2026.05</span>
+          </div>
+        </div>
+        <div class="exp">
+          <img src="image/PKU.png" alt="Peking University logo">
+          <div>
+            <a class="exp-title" href="https://english.pku.edu.cn/" target="_blank">Peking University</a>
+            <p>B.S. in Computer Science</p>
+            <span class="date">2022.09 – 2026.07</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- honors -->
-    <section>
-      <h2>Honors and Awards</h2>
+    <section id="honors">
+      <h2>Honors &amp; Awards</h2>
       <ul class="plain-list">
-        <li><span>Huawei Scholarship (School-level), Peking University</span><span class="date">2025</span></li>
-        <li><span>Merit Student Award, Peking University</span><span class="date">2025</span></li>
+        <li><span>🏅 Huawei Scholarship (School-level), Peking University</span><span class="date">2025</span></li>
+        <li><span>🏅 Merit Student Award, Peking University</span><span class="date">2025</span></li>
       </ul>
     </section>
 
-    <!-- experience -->
-    <section>
-      <h2>Experience</h2>
-      <div class="exp">
-        <img src="image/GT.png" alt="Georgia Tech logo">
-        <div>
-          <a class="exp-title" href="https://www.gatech.edu/" target="_blank">Georgia Institute of Technology</a>
-          <p>Ph.D. Student · Advisor: <a href="https://faculty.cc.gatech.edu/~danfei/" target="_blank">Danfei Xu</a></p>
-        </div>
-        <span class="date">2026.8 – Present</span>
-      </div>
-      <div class="exp">
-        <img src="image/UIUC.png" alt="UIUC logo">
-        <div>
-          <a class="exp-title" href="https://illinois.edu/" target="_blank">University of Illinois Urbana-Champaign</a>
-          <p>Research Intern · Advisor: <a href="https://shenlong.web.illinois.edu/" target="_blank">Shenlong Wang</a></p>
-        </div>
-        <span class="date">2025.6 – 2026.5</span>
-      </div>
-      <div class="exp">
-        <img src="image/PKU.png" alt="Peking University logo">
-        <div>
-          <a class="exp-title" href="https://english.pku.edu.cn/" target="_blank">Peking University</a>
-          <p>B.S. in Computer Science</p>
-        </div>
-        <span class="date">2022.9 – 2026.7</span>
-      </div>
-    </section>
-
     <!-- misc -->
-    <section>
+    <section id="misc">
       <h2>Misc</h2>
-      <p>Outside the lab, I love drawing 🎨 and musicals 🎭. At Peking University I was a member of the
-        Musical Society, where I was cast as <strong>Camila</strong> in our production of
-        <em>In the Heights</em> (2025–2026).</p>
+      <div class="misc-grid">
+        <div class="misc-card">
+          <span class="misc-icon">🎭</span>
+          <h3>Musicals</h3>
+          <p>A member of the PKU Musical Society, cast as <strong>Camila</strong> in our production of <em>In the Heights</em> (2025–2026).</p>
+        </div>
+        <div class="misc-card">
+          <span class="misc-icon">🎨</span>
+          <h3>Drawing</h3>
+          <p>I love drawing in my spare time.</p>
+        </div>
+      </div>
     </section>
 
     <footer>
-      This homepage is adapted from <a href="https://jonbarron.info/" target="_blank">Jon Barron</a>'s website.
+      <p>Last updated: October 2026 · Adapted from <a href="https://jonbarron.info/" target="_blank">Jon Barron</a>'s website.</p>
     </footer>
   </main>
 
@@ -228,6 +264,20 @@
         document.body.appendChild(emoji);
         window.setTimeout(function () { emoji.remove(); }, 1400);
       });
+
+      // Highlight the nav link for the section in view.
+      var links = document.querySelectorAll('.topbar-links a');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            links.forEach(function (link) {
+              link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+            });
+          });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        document.querySelectorAll('main [id]').forEach(function (el) { observer.observe(el); });
+      }
     }());
   </script>
 </body>
