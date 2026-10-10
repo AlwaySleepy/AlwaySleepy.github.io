@@ -1,38 +1,49 @@
-/* Fonts follow enxinsong.com: Lora for text, Inter Tight for compact UI labels.
-   Palette: barely-blue page, warm near-black text, indigo-blue accent. */
+/* One serif family everywhere (Lora, as on enxinsong.com).
+   Palette: near-white page, warm near-black text, indigo accent, pale lavender details. */
 :root {
-  --bg: #f6f7fb;
+  --bg: #fcfcfe;
+  --card: #fff;
   --ink: #1d1d22;
-  --muted: #5e6170;
-  --line: #e3e5ee;
+  --muted: #5f6272;
+  --line: #e9e7f2;
   --accent: #3f4fb0;
   --accent-hover: #2b3784;
-  --accent-soft: #eaecf8;
-  --font: "Lora", Georgia, "Songti SC", "SimSun", serif;
-  --ui-font: "Inter Tight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", sans-serif;
-  --spotlight: #c2410c;
-  --spotlight-soft: #fdeee4;
+  --accent-soft: #efedfc;
+  --tag-bg: #ece7fd;
+  --tag-ink: #4a35ad;
+  --tag-line: #dcd4f8;
+  --hl-bg: #fbe9e6;
+  --hl-ink: #ad3a25;
+  --font: "Lora", "Noto Serif SC", Georgia, "Songti SC", "SimSun", serif;
+  --spotlight: #ad3a25;
   --logo-bg: transparent;
-  --hex-shadow: #e4dcfa;
-  --deco-1: #ece7fb;
-  --deco-2: #e5e8f2;
-  --deco-4: #e8ebf4;
+  --hex-shadow: #ece6fd;
+  --deco-1: #f3f0fe;
+  --deco-2: #f0eefc;
+  --deco-4: #f3f2fd;
   /* Rounded hexagon used as a mask for the portrait and its shadow. */
   --hexagon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 115.47'%3E%3Cpolygon points='50.00,8.08 93.00,32.91 93.00,82.56 50.00,107.39 7.00,82.56 7.00,32.91' fill='black' stroke='black' stroke-width='14' stroke-linejoin='round'/%3E%3C/svg%3E");
+  /* A rounder hexagon for the small marks before section titles. */
+  --hexagon-round: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 115.47'%3E%3Cpolygon points='50.00,17.32 85.00,37.53 85.00,77.94 50.00,98.15 15.00,77.94 15.00,37.53' fill='black' stroke='black' stroke-width='30' stroke-linejoin='round'/%3E%3C/svg%3E");
   color-scheme: light;
 }
 
 /* Dark theme: chosen with the toggle, or following the device when no choice is saved. */
 :root[data-theme="dark"] {
   --bg: #15161c;
+  --card: #1c1d25;
   --ink: #e7e8ee;
   --muted: #a3a8b6;
   --line: #2b2d38;
   --accent: #a3b0f5;
   --accent-hover: #c7cffd;
   --accent-soft: #232842;
-  --spotlight: #fb923c;
-  --spotlight-soft: #3a2518;
+  --tag-bg: #29254a;
+  --tag-ink: #cdc2fb;
+  --tag-line: #3a3566;
+  --hl-bg: #3a2320;
+  --hl-ink: #f4a28f;
+  --spotlight: #f4a28f;
   --logo-bg: #fff;
   --hex-shadow: #3a3160;
   --deco-1: #1f1c30;
@@ -44,14 +55,19 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #15161c;
+    --card: #1c1d25;
     --ink: #e7e8ee;
     --muted: #a3a8b6;
     --line: #2b2d38;
     --accent: #a3b0f5;
     --accent-hover: #c7cffd;
     --accent-soft: #232842;
-    --spotlight: #fb923c;
-    --spotlight-soft: #3a2518;
+    --tag-bg: #29254a;
+    --tag-ink: #cdc2fb;
+    --tag-line: #3a3566;
+    --hl-bg: #3a2320;
+    --hl-ink: #f4a28f;
+    --spotlight: #f4a28f;
     --logo-bg: #fff;
     --hex-shadow: #3a3160;
     --deco-1: #1f1c30;
@@ -61,7 +77,6 @@
   }
 }
 
-.topbar-logo img,
 .exp img[src*="GT"] {
   background: var(--logo-bg);
   border-radius: 4px;
@@ -124,19 +139,6 @@ strong {
   border-radius: 4px;
 }
 
-/* Compact UI text uses the sans companion, as on enxinsong.com. */
-.topbar-links a,
-.date,
-.badge,
-.links a,
-.cv-link,
-.role,
-.pub-links,
-h2 .note,
-footer {
-  font-family: var(--ui-font);
-}
-
 /* Top bar */
 .topbar {
   position: sticky;
@@ -155,13 +157,20 @@ footer {
   gap: 16px;
   max-width: 900px;
   margin: 0 auto;
-  padding: 10px 24px;
+  padding: 12px 24px;
 }
 
-.topbar-logo img {
-  display: block;
-  height: 34px;
-  width: auto;
+.topbar-name {
+  color: var(--ink);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+.topbar-name:hover,
+.topbar-name:focus-visible {
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .topbar-links {
@@ -206,8 +215,8 @@ footer {
 
 .topbar-links a {
   color: var(--muted);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 16.5px;
+  font-weight: 500;
 }
 
 .topbar-links a:hover,
@@ -245,12 +254,13 @@ h2 {
 h2::before {
   content: "";
   display: inline-block;
-  width: .42em;
+  width: .5em;
   aspect-ratio: 1 / 1.1547;
-  margin: 0 .45em .08em 0;
+  margin: 0 .42em .1em 0;
   background: var(--accent);
-  -webkit-mask: var(--hexagon) center / 100% 100% no-repeat;
-  mask: var(--hexagon) center / 100% 100% no-repeat;
+  opacity: .32;
+  -webkit-mask: var(--hexagon-round) center / 100% 100% no-repeat;
+  mask: var(--hexagon-round) center / 100% 100% no-repeat;
   vertical-align: middle;
 }
 
@@ -264,8 +274,7 @@ h2 .note {
 
 .date {
   color: var(--muted);
-  font-size: 16px;
-  font-variant-numeric: tabular-nums;
+  font-size: 16.5px;
   white-space: nowrap;
 }
 
@@ -324,7 +333,7 @@ h2 .note {
 }
 
 .profile {
-  flex: 0 0 270px;
+  flex: 0 0 290px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -367,32 +376,43 @@ h2 .note {
 
 .name {
   margin: 0;
-  font-size: 26px;
+  font-size: 27px;
   font-weight: 500;
   line-height: 1.3;
 }
 
-.role {
+.name-zh {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: .15em;
+}
+
+.role,
+.location {
   margin: 0;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 15.5px;
+}
+
+.role {
+  margin-top: 4px;
   white-space: nowrap;
 }
 
-.cv-link {
-  margin-top: 8px;
-  padding: 6px 16px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--accent-soft);
-  font-size: 14px;
-  font-weight: 500;
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.cv-link:hover,
-.cv-link:focus-visible {
-  border-color: var(--accent);
-  text-decoration: none;
+.location svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  opacity: .8;
 }
 
 .about {
@@ -401,24 +421,24 @@ h2 .note {
   padding-top: 8px;
 }
 
+/* Three links per row keeps the five links in a tidy block. */
 .links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 22px;
-  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 6px 26px;
+  margin-top: 20px;
 }
 
 .links a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 15.5px;
-  font-weight: 500;
+  font-size: 16.5px;
 }
 
 .links a svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
 }
 
@@ -448,22 +468,37 @@ h2 .note {
 .pub {
   display: flex;
   gap: 28px;
-  padding: 20px 0;
+  padding: 26px 0;
 }
 
 .pub + .pub {
   border-top: 1px solid var(--line);
 }
 
-.pub-thumb {
-  width: 240px;
-  aspect-ratio: 16 / 9;
-  flex-shrink: 0;
+/* The frame takes the image's own shape, so every figure is shown in full. */
+.pub-media {
+  flex: 0 0 250px;
   align-self: flex-start;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: var(--accent-soft);
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  border: 1px solid var(--tag-line);
+  border-radius: 16px;
+  background: var(--card);
+}
+
+.pub-media img,
+.pub-media video {
+  display: block;
+  max-width: 100%;
+  max-height: 250px;
+  border-radius: 6px;
+}
+
+.pub-media video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
 }
 
 .pub-body {
@@ -473,9 +508,9 @@ h2 .note {
 
 .pub-title {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   color: var(--ink);
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.4;
 }
@@ -486,7 +521,7 @@ h2 .note {
 }
 
 .authors {
-  margin-bottom: 2px;
+  margin-bottom: 0;
   color: var(--muted);
   font-size: 16.5px;
   line-height: 1.55;
@@ -502,44 +537,70 @@ h2 .note {
 
 .authors strong {
   color: var(--ink);
+  text-decoration: underline 3px var(--tag-line);
+  text-underline-offset: 4px;
+  text-decoration-skip-ink: none;
 }
 
+/* Venue and award tags above the title. */
 .venue {
-  margin-bottom: 4px;
-  font-size: 16.5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
-.venue-tag {
-  font-style: italic;
-}
-
-.venue .badge {
-  display: inline-block;
-  margin-left: 8px;
-  padding: 0 8px;
+.tag {
+  padding: 1px 13px;
   border-radius: 999px;
-  background: var(--spotlight-soft);
-  font-size: .82em;
-  line-height: 1.6;
-  vertical-align: .08em;
+  background: var(--tag-bg);
+  color: var(--tag-ink);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.tag-hl {
+  background: var(--hl-bg);
+  color: var(--hl-ink);
+}
+
+a.tag:hover,
+a.tag:focus-visible {
+  color: var(--hl-ink);
+  text-decoration: none;
+  filter: brightness(.97);
 }
 
 .summary {
-  margin-bottom: 4px;
+  margin: 8px 0 0;
   color: var(--muted);
   font-size: 16.5px;
   line-height: 1.55;
 }
 
 .pub-links {
-  font-size: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
 }
 
-.pub-links a + a::before {
-  content: "/";
-  display: inline-block;
-  margin: 0 8px;
-  color: var(--line);
+.pub-links a {
+  padding: 2px 16px;
+  border: 1px solid var(--tag-line);
+  border-radius: 999px;
+  background: var(--card);
+  font-size: 15.5px;
+  line-height: 1.7;
+  transition: background-color .2s, border-color .2s;
+}
+
+.pub-links a:hover,
+.pub-links a:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  text-decoration: none;
 }
 
 /* Experience */
@@ -588,7 +649,7 @@ footer {
   padding-top: 24px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 14.5px;
+  font-size: 15px;
   text-align: center;
 }
 
@@ -637,8 +698,8 @@ footer {
     padding: 8px 16px;
   }
 
-  .topbar-logo img {
-    height: 28px;
+  .topbar-name {
+    font-size: 17px;
   }
 
   .topbar-links {
@@ -663,6 +724,12 @@ footer {
     flex-basis: auto;
   }
 
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+  }
+
   .portrait-hex {
     width: 180px;
   }
@@ -681,8 +748,13 @@ footer {
     gap: 14px;
   }
 
-  .pub-thumb {
+  .pub-media {
+    flex-basis: auto;
     width: 100%;
+  }
+
+  .pub-media img {
+    max-height: 300px;
   }
 
   .news li {

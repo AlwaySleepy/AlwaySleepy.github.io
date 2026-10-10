@@ -11,8 +11,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-  <link rel="stylesheet" href="stylesheet.css?v=20261010a">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+  <!-- Serif Chinese glyphs for the name only, so it matches Lora on every system. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&text=%E8%AF%B8%E5%AD%90%E7%91%9C&display=swap">
+  <link rel="stylesheet" href="stylesheet.css?v=20261010b">
   <script>
     // Apply the saved theme before first paint; otherwise follow the device setting.
     (function () {
@@ -32,9 +34,7 @@
   <!-- top bar -->
   <nav class="topbar">
     <div class="topbar-inner">
-      <a class="topbar-logo" href="https://www.gatech.edu/" target="_blank" aria-label="Georgia Tech">
-        <img src="image/GT.png" alt="Georgia Tech logo">
-      </a>
+      <a class="topbar-name" href="#home">Ziyu Zhu</a>
       <div class="topbar-links">
         <a href="#home">Home</a>
         <a href="#news">News</a>
@@ -61,9 +61,11 @@
         <div class="portrait-hex">
           <img class="portrait" src="image/ziyu_zhu_hex.jpg?v=2" alt="Photo of Ziyu Zhu">
         </div>
-        <h1 class="name">Ziyu Zhu (诸子瑜)</h1>
+        <h1 class="name">Ziyu Zhu <span class="name-zh" lang="zh-CN">诸子瑜</span></h1>
         <p class="role">Ph.D. Student @ Georgia Tech Robotics</p>
-        <a class="cv-link" href="pdf/cv.pdf" target="_blank">Curriculum Vitae</a>
+        <p class="location">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Atlanta, USA</p>
       </aside>
       <div class="about">
         <p>I am a Ph.D. student at the <a href="https://www.gatech.edu/" target="_blank">Georgia Institute of Technology</a>,
@@ -83,6 +85,12 @@
           <a href="https://scholar.google.com/citations?user=dKxSoUUAAAAJ&amp;hl=zh-CN" target="_blank">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9.5l4 2.4V17c0 .4.2.8.6 1C7.4 19.3 9.6 20 12 20s4.6-.7 6.4-2c.4-.2.6-.6.6-1v-5.1l2-1.2V16h2V9.5z"/></svg>
             Google Scholar</a>
+          <a href="https://x.com/ziyuzhu1101" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.59-6.64 7.59H.47l8.6-9.83L0 1.15h7.59l5.25 6.93zm-1.29 19.5h2.04L6.49 3.24H4.3z"/></svg>
+            Twitter</a>
+          <a href="https://www.linkedin.com/in/" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn</a>
         </div>
       </div>
     </header>
@@ -103,8 +111,11 @@
 
       <!-- MoRE -->
       <article class="pub">
-        <video class="pub-thumb" src="video/more.mp4" autoplay loop muted playsinline preload="auto" aria-label="MoRE demo: a robot arm manipulating a plush sloth"></video>
+        <div class="pub-media">
+          <video src="video/more.mp4" autoplay loop muted playsinline preload="auto" aria-label="MoRE demo: a robot arm manipulating a plush sloth"></video>
+        </div>
         <div class="pub-body">
+          <div class="venue"><span class="tag">CoRL 2026</span><span class="tag tag-hl">Spotlight</span></div>
           <a class="pub-title" href="https://more-robo.github.io/" target="_blank">MoRE: Mixture-of-Experts for Multi-Physics Robotic World Models</a>
           <p class="authors">
             <strong>Ziyu Zhu</strong>*,
@@ -114,7 +125,6 @@
             <a href="https://www.cs.cornell.edu/~weichiu/" target="_blank">Wei-Chiu Ma</a>,
             <a href="https://shenlong.web.illinois.edu/" target="_blank">Shenlong Wang</a>
           </p>
-          <div class="venue"><span class="venue-tag">CoRL 2026</span><span class="badge">Spotlight</span></div>
           <p class="summary">A 3D world model with a mixture of motion experts for multi-physics robotic manipulation.</p>
           <div class="pub-links">
             <a href="https://more-robo.github.io/" target="_blank">Project</a>
@@ -126,8 +136,11 @@
 
       <!-- DexGarmentLab -->
       <article class="pub">
-        <img class="pub-thumb" src="image/dexgarmentlab.jpg" alt="DexGarmentLab teaser">
+        <div class="pub-media">
+          <img src="image/dexgarmentlab.jpg" alt="DexGarmentLab teaser">
+        </div>
         <div class="pub-body">
+          <div class="venue"><span class="tag">NeurIPS 2025</span><span class="tag tag-hl">Spotlight</span></div>
           <a class="pub-title" href="https://wayrise.github.io/DexGarmentLab/" target="_blank">DexGarmentLab: Dexterous Garment Manipulation Environment with Generalizable Policy</a>
           <p class="authors">
             Yuran Wang*,
@@ -141,7 +154,6 @@
             <a href="https://people.eecs.berkeley.edu/~malik/" target="_blank">Jitendra Malik</a>,
             <a href="http://zsdonghao.github.io/" target="_blank">Hao Dong</a>
           </p>
-          <div class="venue"><span class="venue-tag">NeurIPS 2025</span><span class="badge">Spotlight</span></div>
           <p class="summary">A realistic sim environment for bimanual dexterous garment manipulation, with a new benchmark, an efficient data collection pipeline, and a policy framework that uses category-level visual correspondences for few-shot garment manipulation.</p>
           <div class="pub-links">
             <a href="https://wayrise.github.io/DexGarmentLab/" target="_blank">Project</a>
@@ -154,8 +166,11 @@
 
       <!-- GarmentPile -->
       <article class="pub">
-        <img class="pub-thumb" src="image/garmentpile.jpg" alt="GarmentPile teaser">
+        <div class="pub-media">
+          <img src="image/garmentpile.jpg" alt="GarmentPile teaser">
+        </div>
         <div class="pub-body">
+          <div class="venue"><span class="tag">CVPR 2025</span></div>
           <a class="pub-title" href="https://garmentpile.github.io/" target="_blank">GarmentPile: Point-Level Visual Affordance Guided Retrieval and Adaptation for Cluttered Garments Manipulation</a>
           <p class="authors">
             <a href="https://warshallrho.github.io/" target="_blank">Ruihai Wu</a>*,
@@ -165,7 +180,6 @@
             Jiarui Wang,
             <a href="http://zsdonghao.github.io/" target="_blank">Hao Dong</a>
           </p>
-          <div class="venue"><span class="venue-tag">CVPR 2025</span></div>
           <p class="summary">Point-level affordance that models the complex space and multi-modal manipulation candidates of garment piles, aware of garment geometry, structure, and inter-object relations, with further adaptation.</p>
           <div class="pub-links">
             <a href="https://garmentpile.github.io/" target="_blank">Project</a>
@@ -178,8 +192,11 @@
 
       <!-- GarmentLab -->
       <article class="pub">
-        <img class="pub-thumb" src="image/garmentlab.png" alt="GarmentLab teaser">
+        <div class="pub-media">
+          <img src="image/garmentlab.png" alt="GarmentLab teaser">
+        </div>
         <div class="pub-body">
+          <div class="venue"><span class="tag">NeurIPS 2024</span><a class="tag tag-hl" href="https://deformable-workshop.github.io/icra2024/" target="_blank" title="ICRA 2024 Deformable Object Manipulation Workshop">Spotlight · ICRA 2024 Workshop</a></div>
           <a class="pub-title" href="https://garmentlab.github.io/" target="_blank">GarmentLab: A Unified Simulation and Benchmark for Garment Manipulation</a>
           <p class="authors">
             Haoran Lu*,
@@ -193,7 +210,6 @@
             <a href="https://cypypccpy.github.io/" target="_blank">Yuanpei Chen</a>,
             <a href="http://zsdonghao.github.io/" target="_blank">Hao Dong</a>
           </p>
-          <div class="venue"><span class="venue-tag">NeurIPS 2024</span><span class="badge">Spotlight</span> at the <a href="https://deformable-workshop.github.io/icra2024/" target="_blank">ICRA 2024 Deformable Object Manipulation Workshop</a></div>
           <p class="summary">A benchmark for garment manipulation in realistic 3D indoor scenes, covering diverse garment types, robots and manipulators including dexterous hands, and interactions with deformables, rigid bodies, fluids, and avatars.</p>
           <div class="pub-links">
             <a href="https://garmentlab.github.io/" target="_blank">Project</a>
