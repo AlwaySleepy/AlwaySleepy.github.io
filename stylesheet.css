@@ -11,6 +11,7 @@
   --font: "Lora", Georgia, "Songti SC", "SimSun", serif;
   --ui-font: "Inter Tight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", sans-serif;
   --spotlight: #c2410c;
+  --spotlight-soft: #fdeee4;
   --logo-bg: transparent;
   --hex-shadow: #e4dcfa;
   --deco-1: #ece7fb;
@@ -31,6 +32,7 @@
   --accent-hover: #c7cffd;
   --accent-soft: #232842;
   --spotlight: #fb923c;
+  --spotlight-soft: #3a2518;
   --logo-bg: #fff;
   --hex-shadow: #3a3160;
   --deco-1: #1f1c30;
@@ -49,11 +51,12 @@
     --accent-hover: #c7cffd;
     --accent-soft: #232842;
     --spotlight: #fb923c;
+    --spotlight-soft: #3a2518;
     --logo-bg: #fff;
-  --hex-shadow: #3a3160;
-  --deco-1: #1f1c30;
-  --deco-2: #1b1e2a;
-  --deco-4: #191b24;
+    --hex-shadow: #3a3160;
+    --deco-1: #1f1c30;
+    --deco-2: #1b1e2a;
+    --deco-4: #191b24;
     color-scheme: dark;
   }
 }
@@ -101,8 +104,24 @@ p {
   margin: 0 0 12px;
 }
 
+p,
+.pub-title {
+  text-wrap: pretty;
+}
+
 strong {
   font-weight: 600;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* Compact UI text uses the sans companion, as on enxinsong.com. */
@@ -111,6 +130,7 @@ strong {
 .badge,
 .links a,
 .cv-link,
+.role,
 .pub-links,
 h2 .note,
 footer {
@@ -123,7 +143,9 @@ footer {
   top: 0;
   z-index: 50;
   border-bottom: 1px solid var(--line);
-  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  backdrop-filter: saturate(160%) blur(12px);
 }
 
 .topbar-inner {
@@ -195,6 +217,11 @@ footer {
   text-decoration: none;
 }
 
+.topbar-links a.active {
+  text-decoration: underline 2px;
+  text-underline-offset: 8px;
+}
+
 /* Layout */
 .page {
   max-width: 900px;
@@ -203,16 +230,28 @@ footer {
 }
 
 section {
-  margin-top: 48px;
+  margin-top: 60px;
 }
 
 h2 {
-  margin: 0 0 18px;
-  padding-bottom: 8px;
+  margin: 0 0 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--line);
   font-size: 28px;
   font-weight: 500;
   line-height: 1.3;
+}
+
+h2::before {
+  content: "";
+  display: inline-block;
+  width: .42em;
+  aspect-ratio: 1 / 1.1547;
+  margin: 0 .45em .08em 0;
+  background: var(--accent);
+  -webkit-mask: var(--hexagon) center / 100% 100% no-repeat;
+  mask: var(--hexagon) center / 100% 100% no-repeat;
+  vertical-align: middle;
 }
 
 h2 .note {
@@ -232,7 +271,7 @@ h2 .note {
 
 .badge {
   color: var(--spotlight);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* Intro: profile column on the left, bio on the right (after enxinsong.com). */
@@ -285,7 +324,7 @@ h2 .note {
 }
 
 .profile {
-  flex: 0 0 250px;
+  flex: 0 0 270px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -328,7 +367,7 @@ h2 .note {
 
 .name {
   margin: 0;
-  font-size: 23px;
+  font-size: 26px;
   font-weight: 500;
   line-height: 1.3;
 }
@@ -336,7 +375,8 @@ h2 .note {
 .role {
   margin: 0;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 15px;
+  white-space: nowrap;
 }
 
 .cv-link {
@@ -416,20 +456,14 @@ h2 .note {
 }
 
 .pub-thumb {
-  width: 220px;
-  height: 150px;
-  flex-shrink: 0;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid var(--line);
-}
-
-video.pub-thumb {
-  height: auto;
+  width: 240px;
   aspect-ratio: 16 / 9;
+  flex-shrink: 0;
   align-self: flex-start;
-  object-fit: contain;
-  background: #000;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--accent-soft);
 }
 
 .pub-body {
@@ -480,7 +514,14 @@ video.pub-thumb {
 }
 
 .venue .badge {
-  margin-left: 6px;
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--spotlight-soft);
+  font-size: .82em;
+  line-height: 1.6;
+  vertical-align: .08em;
 }
 
 .summary {
@@ -543,8 +584,8 @@ video.pub-thumb {
 
 /* Footer */
 footer {
-  margin-top: 64px;
-  padding-top: 20px;
+  margin-top: 72px;
+  padding-top: 24px;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 14.5px;
@@ -604,10 +645,6 @@ footer {
     gap: 14px;
   }
 
-  .topbar-links {
-    gap: 14px;
-  }
-
   .topbar-links a:not([href="#publications"]):not([href="#news"]) {
     display: none;
   }
@@ -635,6 +672,10 @@ footer {
     margin: 2px 0 0;
   }
 
+  section {
+    margin-top: 48px;
+  }
+
   .pub {
     flex-direction: column;
     gap: 14px;
@@ -642,7 +683,6 @@ footer {
 
   .pub-thumb {
     width: 100%;
-    height: 190px;
   }
 
   .news li {
